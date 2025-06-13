@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-for i in range(97, 123):
-    print("{}".format(chr(i)), end='')
+print("".join("{}".format(chr(i)) for i in range(97, 123)), end="")
 '''range(97, 123) — range of ASCII codes for lowercase English letters (a–z).
 chr(i) — converts ASCII code to character.
 "{}".format(...) — formats each character as specified.
