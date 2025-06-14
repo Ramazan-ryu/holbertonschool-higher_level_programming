@@ -6,6 +6,7 @@ def remove_char_at(str, n):
 
 
 '''
+
 def remove_char_at(str, n):
 def: This defines a function.
 remove_char_at: The name of the function.
@@ -37,4 +38,5 @@ In the same example, str[4:] is "erton".
 
 +
 Joins the two parts: "Hol" + "erton" → "Holerton"
+
 '''
