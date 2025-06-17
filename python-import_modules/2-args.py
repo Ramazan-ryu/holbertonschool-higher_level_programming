@@ -13,3 +13,5 @@ if __name__ == "__main__":
 
     for i in range(n):
         print(f"{i + 1}: {argv[i]}")
+#        ./2-args.py  hello friend i beat you
+#./2-args.py
