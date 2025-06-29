@@ -61,9 +61,10 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
+        symbol = str(getattr(self, "print_symbol", Rectangle.print_symbol))
         rectangle = ""
         for _ in range(self.__height):
-            rectangle += "#" * self.__width + "\n"
+            rectangle += symbol* self.__width + "\n"
         return rectangle.rstrip()
 
     def __repr__(self):
