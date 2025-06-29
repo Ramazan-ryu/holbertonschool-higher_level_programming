@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-        '''a class that defines the a rectangle
+    '''a class that defines the a rectangle
         properties: getter and setter methods for width and height
         methods: __init__ method -for creating a class
         area method - for calculating the area of the rectangle
