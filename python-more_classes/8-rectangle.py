@@ -13,7 +13,8 @@ class Rectangle:
         _repr__ method - returns the formal strig representation of
                 an object that can be evaluated
         _del_ method - performs clean up operation before an object
-                is deleted'''
+                is deleted
+    '''
 
     number_of_instances = 0
     print_symbol = "#"
@@ -68,7 +69,7 @@ class Rectangle:
             return rectangle.rstrip()
 
     def __repr__(self):
-        return f"Rectangle({self.__width}, self.__height})"
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         print("Bye rectangle...")
