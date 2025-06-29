@@ -22,7 +22,7 @@ class Rectangle:
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
-        
+
     @property
     def width(self):
         return self.__width
@@ -64,22 +64,21 @@ class Rectangle:
         symbol = str(getattr(self, "print_symbol", Rectangle.print_symbol))
         rectangle = ""
         for _ in range(self.__height):
-            rectangle += symbol* self.__width + "\n"
-        return rectangle.rstrip()
+            rectangle += symbol * self.__width + "\n"
+            return rectangle.rstrip()
 
     def __repr__(self):
-        return f"Rectangle ({self.__width}, {self.__height})"
+        return f"Rectangle({self.__width}, self.__height})"
 
     def __del__(self):
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
-
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
-        elif not isinstance(rect_2, Rectangle):
+        if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
