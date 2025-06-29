@@ -22,7 +22,7 @@ class Rectangle:
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
-        
+
     @property
     def width(self):
         return self.__width
@@ -64,11 +64,11 @@ class Rectangle:
         symbol = str(getattr(self, "print_symbol", Rectangle.print_symbol))
         rectangle = ""
         for _ in range(self.__height):
-            rectangle += symbol* self.__width + "\n"
+            rectangle += symbol * self.__width + "\n"
         return rectangle.rstrip()
 
     def __repr__(self):
-        return f"Rectangle ({self.__width}, {self.__height})"
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         print("Bye rectangle...")
