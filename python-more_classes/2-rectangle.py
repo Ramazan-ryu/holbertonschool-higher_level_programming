@@ -5,7 +5,9 @@
 class Rectangle:
     '''a class that defines the a rectangle
         properties: getter and setter methods for width and height
-        methods: __init__ method for creating a class'''
+        methods: __init__ method for creating a class
+         area method for calculating the area of the rectangle
+                perimeter method for calculating the perimeter of rectangle'''
 
     def __init__(self, width=0, height=0):
         self.width = width
