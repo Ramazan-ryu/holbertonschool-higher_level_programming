@@ -3,7 +3,9 @@
 
 
 class Rectangle:
-    '''smt'''
+    '''a class that defines the a rectangle
+        properties: getter and setter methods for width and height
+        methods: __init__ method for creating a class'''
 
     def __init__(self, width=0, height=0):
         self.width = width
