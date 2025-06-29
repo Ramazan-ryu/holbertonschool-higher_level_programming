@@ -3,13 +3,13 @@
 
 
 class Rectangle:
-'''a class that defines the a rectangle
+        '''a class that defines the a rectangle
         properties: getter and setter methods for width and height
         methods: __init__ method -for creating a class
-                area method - for calculating the area of the rectangle
-                perimeter method -for calculating the perimeter of rectangle
-                __str__ methods - that returns the string representation of
-                Rectangle instance(s)'''
+        area method - for calculating the area of the rectangle
+        perimeter method -for calculating the perimeter of rectangle
+        __str__ methods - that returns the string representation of
+        Rectangle instance(s)'''
 
     def __init__(self, width=0, height=0):
         self.width = width
