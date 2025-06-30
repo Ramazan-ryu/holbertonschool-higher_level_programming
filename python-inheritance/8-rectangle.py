@@ -3,11 +3,11 @@
 
 
 class Rectangle(BaseGeometry):
-    """ a class Rectangle that inherits from BaseGeometry (7-base_geometry.py)
+    ''' a class Rectangle that inherits from BaseGeometry (7-base_geometry.py)
         Instantiation with width and height: def __init__(self, width, height)
         width and height must be private. No getter or setter
         width and height must be positive integers, validated
-        by integer_validator"""
+        by integer_validator'''
     def __init__(self, width, height):
         self.integer_validator("width", width)
         self.integer_validator("height", height)
