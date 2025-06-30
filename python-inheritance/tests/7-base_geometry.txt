@@ -1,9 +1,66 @@
-bg = BaseGeometry()
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-bg.integer_validator("my_int", 12)   # OK
-bg.integer_validator("width", 89)    # OK
+>>> obj = BaseGeometry()
+
+>>> obj.integer_validator("width", "5")
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+>>> obj.integer_validator("width", 5)
 
 
-bg.integer_validator("name", "John")  # TypeError
-bg.integer_validator("age", 0)        # ValueError
-bg.integer_validator("distance", -4)  # ValueError
+>>> obj.integer_validator("width", -2)
+Traceback (most recent call last):
+...
+ValueError: width must be greater than 0
+
+>>> obj.integer_validator("width", True)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+>>> obj.integer_validator("width", [1,3,4])
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+>>> obj.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> obj.integer_validator("width", {3})
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+>>> obj.integer_validator("width", [4])
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+>>> obj.integer_validator("width", None)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+>>> obj.integer_validator("width")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> obj.integer_validator("width", (4,))
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+>>> obj.integer_validator("width", 0)
+Traceback (most recent call last):
+...
+ValueError: width must be greater than 0
+
+>>> obj.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
