@@ -1,12 +1,4 @@
 #!/usr/bin/python3
-Rectangle = __import__('9-rectangle').Rectangle
-
-r = Rectangle(3, 5)
-
-print(r)
-print(r.area())
-root@bfa0ab48bbe641e1864c7e5e2469c878-2377118072:~/holbertonschool-higher_level_programming/python-inheritance# cat 8-rectangle.py 
-#!/usr/bin/python3
 """a class that is a subclass and initialises an object"""
 
 
