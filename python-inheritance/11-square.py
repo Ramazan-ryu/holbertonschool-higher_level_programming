@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""a class that is a subclass and initialises an object"""
+"""a class that is a subclass and initialises an object."""
 
 
-Rectangle = __import__('10-rectangle').Rectangle
+Rectangle = __import__('10-square').Rectangle
 
 
 class Square(Rectangle):
