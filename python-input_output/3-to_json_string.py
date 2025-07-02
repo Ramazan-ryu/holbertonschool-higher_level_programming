@@ -9,6 +9,5 @@ def to_json_string(my_obj):
     my_obj: the object to be serialised
     Return: A JSON string is returned
     """
-    
     j = json.dumps(my_obj)
     return j
