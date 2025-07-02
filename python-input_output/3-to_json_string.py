@@ -10,5 +10,5 @@ def to_json_string(my_obj):
     Return: A JSON string is returned
     """
     
-    j = json.dump(my_obj)
-    print(j)
+    j = json.dumps(my_obj)
+    return j
