@@ -20,5 +20,12 @@ class CustomObject:
                 pickle.dump(self.file)
         except:
             return None
+    
+    @classmethod
+    def deserialize(cls, filename):
+        try:
+            with open(filename, "rb") as file_rb
+                pickle.load(file_rb)
+        except:
+            return None
 
-    def
