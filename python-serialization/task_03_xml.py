@@ -13,3 +13,10 @@ def serialize_to_xml(dictionary, filename):
 def deserialize_from_xml(filename):
     tree = ET.parse(filename)
     root = tree.getroot()
+    data = {}
+    for child in root:
+        key = child.tag
+        value = child.text
+        data[key] = value
+    rerturn data
+
