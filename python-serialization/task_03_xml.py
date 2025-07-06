@@ -18,5 +18,4 @@ def deserialize_from_xml(filename):
         key = child.tag
         value = child.text
         data[key] = value
-    rerturn data
-
+    return data
