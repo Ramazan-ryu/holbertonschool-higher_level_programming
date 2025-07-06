@@ -13,7 +13,7 @@ def convert_csv_to_json(csv_file):
     data=[]
     try:
         with open(csv_file, "r") as csv_f:
-            data = list(csv.DictReader(csv_f)
+            data = list(csv.DictReader(csv_f))
             for line in data:
                 print(line)
     except Exception:
