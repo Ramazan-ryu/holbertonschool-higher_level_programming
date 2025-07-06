@@ -10,17 +10,19 @@ def convert_csv_to_json(csv_file):
     csv_file: csv file to convert
     data.json: json file to write to
     """
+    data=[]
     try:
-        with open(csv_file "r") as csv_f:
+        with open(csv_file, "r") as csv_f:
             data = csv.DictReader(csv_f)
             for line in data:
                 print(line)
+                memo = list(csv.DictReader(csv_f))
     except Exception:
         return False
 
     try:
         with open("data.json", "w") as dj_f:
-            json.dump(data, dj_f)
+            json.dump(memo, dj_f)
         return True
     except FileNotFoundError:
         return False
