@@ -12,11 +12,13 @@ class CustomObject:
         self.is_student = is_student
 
     def display(self):
+        """method prints out attributes"""
         print(f"Name: {self.name}")
         print(f"Age: {self.age}")
         print(f"Is Student: {self.is_student}")
 
     def serialize(self, filename):
+        """method serializes the current instance of the object"""
         try:
             with open(filename, "wb") as file:
                 return pickle.dump(self, file)
@@ -25,6 +27,7 @@ class CustomObject:
     
     @classmethod
     def deserialize(cls, filename):
+        """method returns instance of custom object"""
         try:
             with open(filename, "rb") as file_rb:
                 return pickle.load(file_rb)
