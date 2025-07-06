@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""Defines class and serializes it"""
+# Defines class and serializes it
+
 import pickle
 
 
 class CustomObject:
-    def __int__(self, name, age, is_student):
+
+    def __init__(self, name, age, is_student):
         self.name = name
         self.age = age
         self.is_student = is_student
@@ -16,16 +18,15 @@ class CustomObject:
 
     def serialize(self, filename):
         try:
-            with open(filename, "wb") as file
-                pickle.dump(self.file)
-        except:
+            with open(filename, "wb") as file:
+                return pickle.dump(self, file)
+        except Exception:
             return None
     
     @classmethod
     def deserialize(cls, filename):
         try:
-            with open(filename, "rb") as file_rb
-                pickle.load(file_rb)
-        except:
+            with open(filename, "rb") as file_rb:
+                return pickle.load(file_rb)
+        except Exception:
             return None
-
