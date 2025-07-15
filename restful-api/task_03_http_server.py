@@ -13,7 +13,7 @@ class SimpleAPIHeader(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "txt/plain")
             self.end_headers()
-            self.wfile.write("Hello. This is the simple API!")
+            self.wfile.write(b"Hello. This is the simple API!")
         elif self.data == "/data":
             self.send_response(200)
             self.send_header("Content-type","txt/plain")
@@ -24,7 +24,7 @@ class SimpleAPIHeader(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "txt/plain")
             self.end_headers()
-            self.wfile.write("OK")
+            self.wfile.write(b"OK")
         elif self.info == "/info":
             self.send_response(200)
             self.send_header("Content-type","txt/plain")
@@ -35,7 +35,7 @@ class SimpleAPIHeader(http.server.BaseHTTPRequestHandler):
             self.send_response(400)
             self.send_header("Content-type","txt/plain")
             self.end_headers()
-            self.wfile.write("Endpoint not foun")
+            self.wfile.write(b"Endpoint not foun")
 with socketserver.TCPServer(("",PORT),SimpleAPIHeader) as httpd:
     print(f"serving port {PORT}")
     httpd.serve_forever()
