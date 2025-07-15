@@ -1,4 +1,4 @@
-#!/usr/binpython3
+#!/usr/bin/env python3
 """Python web server"""
 
 import json
