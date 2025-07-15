@@ -37,6 +37,6 @@ class SimpleAPIHeader(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write("Endpoint not foun")
 with socketserver.TCPServer(("",PORT),SimpleAPIHeader) as httpd:
-    print("serving port", PORT)
+    print(f"serving port {PORT}")
     httpd.serve_forever()
         
