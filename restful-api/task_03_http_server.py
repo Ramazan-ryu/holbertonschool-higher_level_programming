@@ -13,7 +13,7 @@ class SimpleAPIHeader(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "txt/plain")
             self.end_headers()
-            self.wfile.write(b"Hello. This is the simple API!")
+            self.wfile.write(b"Hello, this is a simple AP")
 
         elif self.path == "/data":
             self.send_response(200)
@@ -36,7 +36,7 @@ class SimpleAPIHeader(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(info).encode())
 
         else:
-            self.send_response(400)
+            self.send_response(404)
             self.send_header("Content-type","txt/plain")
             self.end_headers()
             self.wfile.write(b"Endpoint not found")
