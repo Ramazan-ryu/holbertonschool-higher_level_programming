@@ -11,7 +11,7 @@ def generate_invitations(template,attendees):
         print("No data provided, no output files generated.")
         return
     
-    for index, attendees in enumerate(attendees,1):
+    for index, attendee in enumerate(attendees,1):
         message=template
         fields = ["name", "event_title", "event_date", "event_location"]
         for field in fields:
@@ -26,3 +26,12 @@ def generate_invitations(template,attendees):
                 file.write(message)
         else:
             print(f"ERROR: {filename} already exists")
+
+if __name__ == "__main__":
+    template = "Dear {name},\nYou are invited to {event_title} on {event_date} at {event_location}.\n"
+    attendees = [
+        {"name": "Alice", "event_title": "Python Conference", "event_date": "2025-08-01", "event_location": "Baku"},
+        {"name": "Bob", "event_title": "AI Summit", "event_date": "2025-08-05", "event_location": "Ganja"},
+        {"name": "Charlie", "event_title": "Hackathon", "event_date": "2025-08-10", "event_location": "Sumgait"},
+    ]
+    generate_invitations(template, attendees)
