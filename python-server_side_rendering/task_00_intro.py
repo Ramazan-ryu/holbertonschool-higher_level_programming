@@ -28,7 +28,7 @@ def generate_invitations(template,attendees):
                 value = "N/A"
             message = message.replace(f"{{{field}}}", value)
 
-        filename = f"output_{index}.txt"
+        filename = f"output_{XZ}.txt"
         if not exists(filename):
             with open(filename, "w") as file:
                 file.write(message)
