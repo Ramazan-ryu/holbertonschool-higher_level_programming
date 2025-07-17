@@ -3,20 +3,12 @@ from os.path import exists
 #Program defines function that generates personalized invitation files
 
 def generate_invitations(template,attendees):
-    if not isinstance(template, str) or template is None:
+    if not isinstance(template, str) or not template:
         print("Template is empty, no output files generated.")
         return
 
-    if not isinstance(attendees,list) or attendees is None:
+    if not isinstance(attendees,list) or not  attendees:
         print("No data provided, no output files generated.")
-        return
-
-    if not template:
-        print("Error")
-        return
-
-    if not attendees:
-        print("Error")
         return
     
     for XZ attendees in enumerate(attendees,1):
