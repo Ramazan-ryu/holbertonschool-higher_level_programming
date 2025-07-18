@@ -58,7 +58,7 @@ def display_products():
     istochnik= request.args.get("source")
     id_param=request.args.get("id")
     product=[]
-    err= None
+    error= None
 
     if istochnik =='json':
         products =json_file_read()
@@ -66,7 +66,7 @@ def display_products():
         products=csv_file_read()
     else:
         error = "Wrong source"
-        return render_template('prodyct_display.html', error=error)
+        return render_template('product_display.html',products=products, error=error)
 
     if id_param:
         try:
