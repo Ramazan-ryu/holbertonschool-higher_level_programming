@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 #
 from flask import Flask, render_template
+import json
 
 app = Flask(__name__)
 
@@ -16,6 +17,15 @@ def about():
 def contact():
     return render_template('contact.html')
 
+@app.route('/items')
+def items():
+    try:
+        with open("items.json","r") as f:
+            baza= json.load(f)
+            items=baza.get("items",[])
+    except Exception as excp:
+        items=[]
+    return render_template("items.html", items=items)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
