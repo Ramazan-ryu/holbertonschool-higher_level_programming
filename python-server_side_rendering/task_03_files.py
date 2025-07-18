@@ -2,6 +2,8 @@
 #
 from flask import Flask, render_template
 import json
+import csv
+
 
 app = Flask(__name__)
 
@@ -26,6 +28,48 @@ def items():
     except Exception as excp:
         items=[]
     return render_template("items.html", items=items)
+
+def csv_file_read():
+    try:
+        with open("products.csv", line="") as f_csv
+        read=csv.DictReader(f_csv)
+        for row in read:
+            products.append({
+                "id": int(row[id]),
+                "name":row[name],
+                "category":row[category],
+                "price":float(row[price])
+            })
+        return products
+    except Exception as excp:
+        return[]
+
+@app.route('/products')
+def display_products():
+    istochnik= request.args.get("source")
+    id_param=request.args.get("id")
+    product=[]
+    err= None
+
+    if istochnik =='json':
+        products =read_json_file()
+    elif istochnik =='csv':
+        products=read_csv_file()
+    else:
+        error = "Wrong source"
+        return render_template('prodyct_display.html', error=error)
+
+    if id_param:
+        try:
+            product_id=int(id_param)
+            products = [p for p in products if p['id'] == product_id]
+            if not products:
+                error = "Product not found"
+            except ValueError:
+                error="Invalid ID format"
+                products=[]
+
+    return render_template('product_display.html',products=products, error=error)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
