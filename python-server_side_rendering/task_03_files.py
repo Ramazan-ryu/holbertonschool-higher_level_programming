@@ -60,9 +60,9 @@ def display_products():
     err= None
 
     if istochnik =='json':
-        products =read_json_file()
+        products =products.json()
     elif istochnik =='csv':
-        products=read_csv_file()
+        products=products.csv()
     else:
         error = "Wrong source"
         return render_template('prodyct_display.html', error=error)
