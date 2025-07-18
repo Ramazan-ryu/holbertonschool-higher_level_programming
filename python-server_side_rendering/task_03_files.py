@@ -32,7 +32,7 @@ def items():
 
 def json_file_read():
     try:
-        with open("items.json","r") as f_json:
+        with open("products.json","r") as f_json:
             return json.load(f_json)
     except Exception:
         return []
