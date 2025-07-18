@@ -31,15 +31,15 @@ def items():
 
 def csv_file_read():
     try:
-        with open("products.csv", line="") as f_csv
-        read=csv.DictReader(f_csv)
-        for row in read:
-            products.append({
-                "id": int(row[id]),
-                "name":row[name],
-                "category":row[category],
-                "price":float(row[price])
-            })
+        with open("products.csv", line="") as f_csv:
+            read=csv.DictReader(f_csv)
+            for row in read:
+                products.append({
+                    "id": int(row[id]),
+                    "name":row[name],
+                    "category":row[category],
+                    "price":float(row[price])
+                })
         return products
     except Exception as excp:
         return[]
@@ -65,9 +65,9 @@ def display_products():
             products = [p for p in products if p['id'] == product_id]
             if not products:
                 error = "Product not found"
-            except ValueError:
-                error="Invalid ID format"
-                products=[]
+        except ValueError:
+            error="Invalid ID format"
+            products=[]
 
     return render_template('product_display.html',products=products, error=error)
 
