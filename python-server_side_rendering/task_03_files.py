@@ -39,7 +39,7 @@ def json_file_read():
 
 def csv_file_read():
     try:
-        with open("products.csv",line="") as f_csv:
+        with open("products.csv",newline="") as f_csv:
             read=csv.DictReader(f_csv)
             products=[]
             for row in read:
@@ -57,7 +57,7 @@ def csv_file_read():
 def display_products():
     istochnik= request.args.get("source")
     id_param=request.args.get("id")
-    product=[]
+    products=[]
     error= None
 
     if istochnik =='json':
