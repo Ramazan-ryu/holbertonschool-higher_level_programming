@@ -25,7 +25,7 @@ def items():
         with open("items.json","r") as f:
             baza= json.load(f)
             items=baza.get("items",[])
-    except Exception as excp:
+    except Exception:
         items=[]
     return render_template("items.html", items=items)
 
@@ -39,17 +39,18 @@ def json_file_read():
 
 def csv_file_read():
     try:
-        with open("products.csv", line="") as f_csv:
+        with open("products.csv",line="") as f_csv:
             read=csv.DictReader(f_csv)
+            products=[]
             for row in read:
                 products.append({
-                    "id": int(row[id]),
-                    "name":row[name],
-                    "category":row[category],
-                    "price":float(row[price])
+                    "id": int(row["id"]),
+                    "name":row["name"],
+                    "category":row["category"],
+                    "price":float(row["price"])
                 })
         return products
-    except Exception as excp:
+    except Exception:
         return[]
 
 @app.route('/products')
