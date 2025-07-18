@@ -29,6 +29,14 @@ def items():
         items=[]
     return render_template("items.html", items=items)
 
+
+def json_file_read():
+    try:
+        with open("items.json","r") as f_json:
+            return json.load(f_json)
+    except Exception:
+        return []
+
 def csv_file_read():
     try:
         with open("products.csv", line="") as f_csv:
