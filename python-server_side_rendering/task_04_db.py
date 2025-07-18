@@ -85,7 +85,7 @@ def display_products():
 
     return render_template('product_display.html',products=products, error=error)
 
-def create_database():
+def load_from_sqlite():
     try:
         conn = sqlite3.connect('products.db')
         cursor = conn.cursor()
@@ -101,7 +101,7 @@ def create_database():
                 "category":row[3]
              })
         return products
-    except sqlite3.Error :
+    except sqlite3.Error:
         print("Error database")
         return None
 
