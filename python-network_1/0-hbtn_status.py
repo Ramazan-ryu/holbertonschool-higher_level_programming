@@ -8,6 +8,6 @@ import urllib.request
 with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
     data = response.read()
     print("Body response")
-    print("".format(type(body)))
-    print("".format(body))
-    print("".format(body.decode('utf-8')))
+    print("- type:".format(type(body)))
+    print("- content:".format(body))
+    print("- utf8 content:".format(body.decode('utf-8')))
