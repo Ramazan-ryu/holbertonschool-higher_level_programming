@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/python3
 """This script fetches data from
     https://alx-intranet.hbtn.io/status
 """
