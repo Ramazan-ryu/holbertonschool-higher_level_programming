@@ -5,6 +5,7 @@ and processes the JSON response."""
 
 import requests
 import sys
+
 """Get the letter (if given)"""
 if len(sys.argv) > 1:
     q = sys.argv[1]  """Take the first argument"""
