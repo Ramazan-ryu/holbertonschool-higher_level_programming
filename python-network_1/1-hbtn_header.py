@@ -4,7 +4,7 @@ This script takes a URL, sends a request to it, and displays the value of the
 X-Request-Id variable found in the header of the response.
 """
 
-from urllib import request
+import request,urllib
 import sys
 
 if __name__ == "__main__":
