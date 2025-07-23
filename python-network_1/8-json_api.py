@@ -20,7 +20,7 @@ import requests
 import sys
 
 if __name__ == "__main__":
-# Get the letter (if given)
+    # Get the letter (if given)
     if len(sys.argv) > 1:
         q = sys.argv[1]  # Take the first argument
     else:
