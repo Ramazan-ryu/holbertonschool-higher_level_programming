@@ -13,7 +13,5 @@ if __name__ == "__main__":
             print("\t- content: {}".format(body))
             print("\t- utf8 content: {}".format(body.decode('utf-8')))
 
-    except Exception as a:
-        print("Error ocuured as {a}")
-
-        
+    except Exception as e:
+        print(f"Error ocuured as {e}")
