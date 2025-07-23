@@ -10,6 +10,5 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     with urllib.request.urlopen(url) as zapros:
-        head = zapros.headers
-        zapros-r_id-x = headers.get('X-Request-Id')
-        print(zapros-r_id-x)
+        x-zapros_id = zapros.headers.get('X-Request-Id')
+        print(x-zapros_id)
