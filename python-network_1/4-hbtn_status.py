@@ -9,7 +9,7 @@ example (tabulation before -)
 
 import requests
 if __name__ == "__main__":
-    url = request.get('https://intranet.hbtn.io/status')
+    url = requests.get('https://intranet.hbtn.io/status')
     body = url.txt
     print("Body response")
     print("\t- type: {}".format(type(body)))
