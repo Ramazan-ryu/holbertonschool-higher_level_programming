@@ -1,8 +1,8 @@
-#!/usr/bin/python3
+#/usr/bin/python3
 """This script fetches data from https://alx-intranet.hbtn.io/status
 """
 
-import urllib.request
+from urllib import request
 
 if __name__ == "__main__":
 
