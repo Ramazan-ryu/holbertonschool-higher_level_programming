@@ -7,7 +7,7 @@ if __name__ == "__main__":
     url = 'https://intranet.hbtn.io/status'
     try:
         with urllib.request.urlopen(url) as zapros:
-            data = zapros.read()
+            body = zapros.read()
             print("Body response")
             print("\t- type: {}".format(type(body)))
             print("\t- content: {}".format(body))
