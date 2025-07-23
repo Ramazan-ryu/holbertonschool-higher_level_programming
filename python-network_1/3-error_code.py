@@ -11,12 +11,12 @@ import sys
 if __name__ == "__main__":
     """Ensure the code is executed when direclty run"""
     er = sys.argv[1]
-    req = request.Request(er)
+    req = urllib.request.Request(er)
     req.add_header("cfclearance", 'true')
 
     try:
-        with request.urlopen(req) as response:
+        with urllib.request.urlopen(req) as response:
             body = response.read().decode('utf-8')
             print(body)
-    except error.HTTPError as e:
+    except urllib.error.HTTPError as e:
         print("Error code:", e.code)
